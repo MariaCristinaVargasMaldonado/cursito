@@ -120,7 +120,7 @@ class App extends Component {
                         <div className="col s12">
                             <div className="card">
                                 <div className="card-content">
-                                    <form onSubmit={this.addTask}>
+                                    <form id="form" onSubmit={this.addTask}>
                                         <div className="row">
                                             <div className="input-field col s12">
                                                 <input name="title" onChange={this.handleChange} type="text" value={this.state.title} placeholder="titulo de la tarea"></input>
@@ -169,6 +169,8 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
+
+                <div id="tasks" class="tasks" className="container"></div>
             </div>
         )
     }
