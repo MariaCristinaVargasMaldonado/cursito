@@ -107,7 +107,6 @@ class App extends Component {
 
     render() {
         return (
-            <link rel="stylesheet" href="./../public/style.css"></link>
             <div>
                 {/* cabecera */ }
                 <nav className="light-blue darken-4">
