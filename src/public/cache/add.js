@@ -1,3 +1,4 @@
+
 const indexedDB = window.indexedDB
 const form = document.getElementById('form')
 const tasks = document.getElementById('tasks')
@@ -8,8 +9,8 @@ if(indexedDB && form){
   request.onsuccess = () => {
     db = request.result
     console.log('OPEN', db)
-    addbdData()
-    readData()
+    //addbdData()
+    //readData()
   }
   request.onupgradeneeded = () => {
     db = request.result
@@ -31,6 +32,7 @@ if(indexedDB && form){
     readData()
   }
   //recoge de la bd
+  
   const url = 'http://localhost:3000/api/task'
     fetch(url)
         .then(function(res) {
@@ -63,18 +65,24 @@ if(indexedDB && form){
     const request = objectStore.openCursor()
     const fragment = document.createDocumentFragment()
     //addbdData()
- 
+
     request.onsuccess = (e) => {
       const cursor = e.target.result
       //console.log(e.target)
       if(cursor){
         //console.log(cursor.value)
-        const taskTitle = document.createElement('P')
-        taskTitle.textContent = cursor.value.taskTitle
-        fragment.appendChild(taskTitle)
-        const taskDescription = document.createElement('P')
-        taskDescription.textContent = cursor.value.taskDescription
-        fragment.appendChild(taskDescription)
+        /*
+        const _id = document.createElement('P')
+        _id.textContent = cursor.value._id
+        fragment.appendChild(_id)*/
+
+        const title = document.createElement('P')
+        title.textContent = cursor.value.title
+        fragment.appendChild(title)
+
+        const description = document.createElement('P')
+        description.textContent = cursor.value.description
+        fragment.appendChild(description)
         cursor.continue()
       } else {
         tasks.textContent = ''
@@ -87,10 +95,11 @@ if(indexedDB && form){
   form.addEventListener('submit', (e) => {
      e.preventDefault()
      const data = {
-       taskTitle: e.target.title.value,
-       taskDescription: e.target.description.value
+      _id: '',
+      title: e.target.title.value,
+      description: e.target.description.value
      }
-     //console.log(data)
+     console.log('adasdd:',data)
      addData(data)
   })
 }

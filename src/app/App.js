@@ -107,6 +107,7 @@ class App extends Component {
 
     render() {
         return (
+            <link rel="stylesheet" href="./../public/style.css"></link>
             <div>
                 {/* cabecera */ }
                 <nav className="light-blue darken-4">
@@ -170,7 +171,7 @@ class App extends Component {
                     </div>
                 </div>
 
-                <div id="tasks" class="tasks" className="container"></div>
+                <div id="tasks" className="container"></div>
             </div>
         )
     }
