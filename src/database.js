@@ -1,5 +1,9 @@
 const mongoose = require('mongoose')
 
+module.exports = {
+  'url': 'mongodb+srv://cristina:asdf1234@cursito.ank6a.mongodb.net/cursito?retryWrites=true&w=majority'
+}
+
 const URI = 'mongodb+srv://cristina:asdf1234@cursito.ank6a.mongodb.net/cursito?retryWrites=true&w=majority'
 mongoose.connect(URI, { useUnifiedTopology: true })
     .then(db => console.log('la bd esta conectada'))
