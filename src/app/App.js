@@ -40,15 +40,17 @@ class App extends Component {
                     'Accept': 'application/json', 
                     'Content-Type': 'application/json'
                 }            
-            })
+            })            
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                this.notify()
                 M.toast({html: 'Tarea guardada'})
                 this.setState({title: '', description : ''})
                 this.fetchTasks()
             })
             .catch(err => console.error(err))
+            
         }
 
         e.preventDefault()
@@ -104,7 +106,22 @@ class App extends Component {
             [name]: value 
         })
     }
+    /* Scripts de notificaciones  */
+    
+    notify(){
+        const options = {
+        body: 'Nueva tarea publicada',
+        icon:'icono.png',
+        data:'extra-data',
+        tag: 'notificaion Demo'
+        }
+        const notification = new Notification('Cursito',options)
+        notification.addEventListener('close',()=>console.log('CLOSE'))
+        notification.addEventListener('show',()=>console.log('SHOWN'))
+        /* console.log(notification.data) */
+    }
 
+    /* vista HTML */
     render() {
         return (
             <div>
@@ -117,6 +134,7 @@ class App extends Component {
 
                 <div className="container">
                     <div className="row">
+                    {/* <button id="permissions">Permissions</button> */}
                         <div className="col s12">
                             <div className="card">
                                 <div className="card-content">
@@ -131,7 +149,7 @@ class App extends Component {
                                                 <textarea name="description" onChange={this.handleChange} value={this.state.description} placeholder="descripcion de la tarea" className="materialize-textarea"></textarea>
                                             </div>
                                         </div>
-                                        <button className="btn btn-light darken-4" type="submit">Enviar</button>
+                                        <button id="permissions" className="btn btn-light darken-4" type="submit">Enviar</button>
                                     </form>
                                 </div>
                             </div>
