@@ -171,6 +171,7 @@ class App extends Component {
                                                     <td>{ tasks.title }</td>
                                                     <td>{ tasks.description }</td>
                                                     <td>
+                                                    <button id="open" type="button" class="btn icon fas fa-camera-retro"></button>
                                                         <button className=" btn ligth-yellow" onClick={() => this.editTask(tasks._id)}>
                                                             <i className="material-icons">edit</i>
                                                         </button>
