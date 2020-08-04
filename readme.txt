@@ -14,7 +14,8 @@ sin embargo no se logro que funcione de manera Offline, se tuvo muchos problemas
 description, con los mismo datos de la DB, todo esto se intento unir con un login pero no se logro implementarlo ya que hubo muchos problemas en las rutas, al final no se logro; 
 en la rama Login se ve algunas pruebas que se hizo pero sin exito.
 
-En la rama notificaciones se tiene la implementacion de las notificaciones y subir imagenes.
+En la rama notificaciones se tiene la implementacion de las notificaciones, que seran visibles cuando el usuario haga la confirmacion en el navegador, esta notificacion sera posible cerrarla manualmente, se intento agregar la funcion de entregar de tarea  ejemplo enviar archivos jpg, abrir la camara del movil para enviar una imagen, pero no se llego a cumplir debido a factores de tiempo
+
 
 Otra parte que no se pudo implementar pero igual se hizo se encuentra en: 
 https://github.com/AlexGonzalesMeneses/Bugsito-awa-pwa-ionic
